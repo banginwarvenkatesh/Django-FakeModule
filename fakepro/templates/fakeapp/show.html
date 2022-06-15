@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block title %}
+<title>Salesman Table</title>
+{% endblock %}
+
+{% block content %}
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">NAME</th>
+        <th scope="col">ADDRESS</th>
+        <th scope="col">EMAIL</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for i in obj %}
+        <tr>
+            <td>{{i.name}}</td>
+            <td>{{i.address}}</td>
+            <td>{{i.email}}</td>
+        
+        </tr>
+        {% endfor %}
+
+    </tbody>
+  </table>
+  <button class="btn btn-success"><a href="{% url 'create_url' %}">ADD SALESMAN</a></button>
+{% endblock %}
